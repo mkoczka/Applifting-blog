@@ -1,0 +1,48 @@
+@import '../../variables';
+
+
+
+.table-articles{
+    max-width: 1440px;
+    margin: 0 auto;
+    
+}
+
+.myArt-but {
+    display: flex;
+    max-width: 1600px;
+    margin: 50px 0 50px 30px;
+    
+    h1 {
+        margin-right: 20px;
+    }
+}
+
+table {
+    margin-top: 100px;
+    margin: 0 30px 0 30px;
+    width: 95%;
+  
+
+    thead th {
+        text-align: left;
+        border-bottom: 2px solid $border;
+    }
+
+    tbody td {
+        padding: 15px 10px;
+        border-bottom: 1px solid $border;
+        font-size: 1.1rem;
+
+        a{
+            color: black;
+            &:hover {
+                color: $hover-link;
+            }
+        }
+        
+    }
+
+ 
+
+}

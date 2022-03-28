@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route, Router} from 'react-router-dom'
+import RecentArticles from './views/recent/RecentArticles.js';
+import Single from './views/single/single.js'
+import NavBar from './components/NavBar/NavBar'
+import EditForm from './views/edit-form/EditForm'
+import NewForm from './views/new-form/NewForm'
+
+import TheLogin from './views/login/Login'
+
+import TableArticles from './views/table-articles/TableArticles'
+
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+
+      <Routes>
+        
+        <Route path="/" element={<RecentArticles/>} exact/>
+        <Route path="/single/:singleId" element={<Single/>} />
+        <Route path="/table-article" element={<TableArticles/>}/>
+        <Route path="/edit-form" element={<EditForm/>} />
+        <Route path="/new-form" element={<NewForm/>} />
+        <Route path="/login" element={<TheLogin/>} />
+
+      </Routes>
+        
+      
+      
+     
+
     </div>
-  );
+  );<Single />
 }
 
 export default App;
