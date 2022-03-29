@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 import '../new-form/newForm.scss'
@@ -12,8 +12,11 @@ const initialState = {
 
 
 const NewForm = () => {
-  const [formValue, setFormValue] = useState(initialState)
-  const { title, text } = formValue
+  const [formValue, setFormValue] = useState({
+    title: "",
+    text: ""
+  })
+  
 
   const navigate = useNavigate();
 
@@ -37,6 +40,7 @@ const NewForm = () => {
       .post('https://my-json-server.typicode.com/Naiio97/demo/myArticles', newArticle)
       .then(res => {
         console.log("Blog Updated Successfully");
+        alert("Článek přidán")
       })
       .catch(err => {
         console.log("Error");
@@ -85,7 +89,6 @@ const NewForm = () => {
               onChange={onInputChange}
               rows="50"
               cols="150"
-            // value="Email"
             >
             </textarea>
           </div>

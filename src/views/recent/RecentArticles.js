@@ -4,7 +4,7 @@ import TheArticles from '../../components/articles/TheArticles'
 
 
 
-const RecentArticles = () => {
+const RecentArticles = ({comments}) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
