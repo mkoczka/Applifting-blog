@@ -7,8 +7,8 @@ const TheArticles = ({articles}) => {
     <div className="the-articles">
         <h1>Recent articles</h1>
         <div className="articles">
-            {articles.map((a) => (
-                <TheArticle article={a} />
+            {articles.map((a, index) => (
+                <TheArticle key={index} article={a} />
             ))}
         </div>
    </div>

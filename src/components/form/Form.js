@@ -4,17 +4,10 @@ import TheButton from '../../components/button/TheButton'
 
 import '../form/form.scss'
 
-const Form = ({value}) => {
+const Form = () => {
   return (
     <div className="form">
         <form className="new-article">
-            <div className="header-but">
-                <h1>{value}</h1>
-                <Link to={`/table-article`}>
-                  <TheButton value="Published Article" />
-                </Link>
-                  
-            </div>
             <div className="article-title">
               <span>Article Title</span> <br />
                 <input

@@ -14,8 +14,9 @@ const RecentArticles = ({comments}) => {
     
   }, []);
 
+
   return (
-    <div>
+    <div >
        <TheArticles articles={articles}  />
     </div>
   )

@@ -22,7 +22,7 @@ const Single = () => {
         <SingleArticle />
         <TheSidebar />
     </div>
-    <div className="com">
+    <div key={comments} className="com">
         <TheComments comments={comments} />
     </div></>
     

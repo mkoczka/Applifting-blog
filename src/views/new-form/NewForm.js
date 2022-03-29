@@ -63,7 +63,7 @@ const NewForm = () => {
           onSubmit={hendleSubmit}>
           <div className="header-but">
             <h1>Create new article</h1>
-            <TheButton type="submit" value="Publish Article" />
+            <TheButton value="Publish Article" />
           </div>
           <div className="article-title">
             <span>Article Title</span> <br />

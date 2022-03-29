@@ -40,6 +40,14 @@ table {
                 color: $hover-link;
             }
         }
+
+        svg {
+            cursor: pointer;
+
+            &:hover {
+                color: $hover-link;
+            }
+        }
         
     }
 

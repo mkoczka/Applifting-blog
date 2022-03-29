@@ -48,9 +48,9 @@ const TheComments = ({comments}) => {
                 </form> 
                
             </div>
-        <div className="comments">
-            {comments.map((a) => (
-                <TheComment comment={a} />
+        <div>
+            {comments.map((a,index) => (
+                <TheComment key={index} comment={a} />
             ))}
         </div>
     </div>

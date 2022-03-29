@@ -7,25 +7,34 @@ import { IoPencil } from "react-icons/io5";
 import { IoTrash } from "react-icons/io5";
 
 
-import Data from '../../myArticles.json'
 
-const TableArticles = (value) => {
+const TableArticles = () => {
     
- const [dataTable, setDataTable] = useState(Data) 
+ const [dataTable, setDataTable] = useState([]) 
   
 
-  // useEffect(() => {
-  //   axios('https://my-json-server.typicode.com/Naiio97/demo/myArticles')
-  //   .then(res => setDataTable(res.data))
-  //   .catch(err => console.error(err))
-  // }, []);
+  useEffect(() => {
+    axios('https://my-json-server.typicode.com/Naiio97/demo/myArticles')
+    .then(res => setDataTable(res.data))
+    .catch(err => console.error(err))
+  }, []);
+
+  const hendleDelete = () => {
+    axios.delete('https://my-json-server.typicode.com')
+    .then(res => {
+      console.log("Article was deleted");
+    })
+    .catch(err => {
+      console.log("Error");
+    })
+  }
 
   return (
     <div className="table-articles">
       <div className="myArt-but">
         <h1>My Articles</h1>
         <Link to={"/new-form"}>
-          <TheButton value="Ahoj" /> 
+          <TheButton value="Create New Article" /> 
         </Link>
        
       </div>
@@ -41,21 +50,19 @@ const TableArticles = (value) => {
           </tr>
         </thead>
         <tbody>
-          {dataTable.map((data) => (
-            <tr key={data.id}>
-            <td>{data.title.substring(0, 25)}...</td>
-            <td>{data.parex.substring(0, 80)}...</td>
-            <td>{data.author}</td>
-            <td>{data.comments}</td>
+          {dataTable.map((d, index) => (
+            <tr key={index}>
+            <td>{d.title.substring(0, 25)}...</td>
+            <td>{d.text.substring(0, 80)}...</td>
+            <td>{d.author}</td>
+            <td>{d.comments}</td>
             <td>
               <Link to={"/edit-form"}>
                 <IoPencil/> 
               </Link>
-            
-             
-              <Link to={"/"}>
-                <IoTrash/>
-              </Link>
+          
+                <IoTrash onClick={hendleDelete}/>
+              
               
             </td>
           </tr>
