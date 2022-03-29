@@ -9,7 +9,7 @@ import { IoTrash } from "react-icons/io5";
 
 import Data from '../../myArticles.json'
 
-const TableArticles = () => {
+const TableArticles = (value) => {
     
  const [dataTable, setDataTable] = useState(Data) 
   
@@ -24,7 +24,10 @@ const TableArticles = () => {
     <div className="table-articles">
       <div className="myArt-but">
         <h1>My Articles</h1>
-        <TheButton />
+        <Link to={"/new-form"}>
+          <TheButton value="Ahoj" /> 
+        </Link>
+       
       </div>
     
       <table>

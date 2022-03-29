@@ -1,60 +1,97 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 import '../new-form/newForm.scss'
 
 import TheButton from '../../components/button/TheButton'
 
-const NewForm = () => {
-const [title, setTitle] = useState("")
-const [text, setText] = useState("")
-
-const hendleSubmit = (e) => {
-  e.preventDefault();
-  const newArticle = {
-    title,
-    text
-  }
-  axios.post('https://my-json-server.typicode.com/Naiio97/demo/myArticles')
+const initialState = {
+  title: "",
+  text: ""
 }
- 
+
+
+const NewForm = () => {
+  const [formValue, setFormValue] = useState(initialState)
+  const { title, text } = formValue
+
+  const navigate = useNavigate();
+
+  const getDate = () => {
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, "0");
+    let mm = String(today.getMonth() + 1).padStart(2, "0");
+    let yyyy = today.getFullYear();
+
+    today = dd + "/" + mm + "/" + yyyy;
+    return today;
+  }
+
+
+  const hendleSubmit = (e) => {
+    e.preventDefault();
+    const today = getDate()
+    const newArticle = { ...formValue, date: today }
+
+    axios
+      .post('https://my-json-server.typicode.com/Naiio97/demo/myArticles', newArticle)
+      .then(res => {
+        console.log("Blog Updated Successfully");
+      })
+      .catch(err => {
+        console.log("Error");
+      })
+
+    setFormValue({ title: "", text: "" });
+    navigate("/");
+  }
+
+  const onInputChange = (e) => {
+    let { name, value } = e.target;
+    setFormValue({ ...formValue, [name]: value });
+  };
+
   return (
     <div>
-        <div className="new-form">
+      <div className="new-form">
         <form
           className="new-article"
           onSubmit={hendleSubmit}>
-            <div className="header-but">
-                <h1>Create new article</h1>
-                <TheButton type="submit" />
-            </div>
-            <div className="article-title">
-              <span>Article Title</span> <br />
-                <input
-                      type="text"
-                      className="form-control"
-                      // value="Email"
-                      >
-                </input>
-            </div>  
-        
-            <div className="uploade-img">
-              <span>Featured image</span>
-              <TheButton />
-            </div>
-            <div className="content">
-              <span>Content</span>
-                <textarea
-                      type="textarea"
-                      className="form-control"
-                      rows="50"
-                      cols="150"
-                      // value="Email"
-                >
-              </textarea>
-            </div>
+          <div className="header-but">
+            <h1>Create new article</h1>
+            <TheButton type="submit" value="Publish Article" />
+          </div>
+          <div className="article-title">
+            <span>Article Title</span> <br />
+            <input
+              type="text"
+              name="title"
+              className="form-control"
+              onChange={onInputChange}
+            >
+            </input>
+          </div>
+
+          <div className="uploade-img">
+            <span>Featured image</span>
+            <TheButton value="Upload an Image" />
+          </div>
+          <div className="content">
+            <span>Content</span>
+            <textarea
+              type="textarea"
+              name="text"
+              className="form-control"
+              onChange={onInputChange}
+              rows="50"
+              cols="150"
+            // value="Email"
+            >
+            </textarea>
+          </div>
         </form>
-    </div>
-  )
+      </div>
+      )
     </div>
   )
 }

@@ -1,15 +1,19 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import TheButton from '../../components/button/TheButton'
 
 import '../form/form.scss'
 
-const Form = () => {
+const Form = ({value}) => {
   return (
     <div className="form">
         <form className="new-article">
             <div className="header-but">
-                <h1>Create new article</h1>
-                <TheButton />
+                <h1>{value}</h1>
+                <Link to={`/table-article`}>
+                  <TheButton value="Published Article" />
+                </Link>
+                  
             </div>
             <div className="article-title">
               <span>Article Title</span> <br />

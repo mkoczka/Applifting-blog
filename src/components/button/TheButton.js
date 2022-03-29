@@ -2,10 +2,10 @@ import React from 'react'
 import '../button/button.scss'
 
 
- const TheButton = () => {
+ const TheButton = ({value}) => {
   return (
     <div>
-        <button>Button</button>
+        <button>{value}</button>
     </div>
   )
 }
