@@ -1,80 +1,33 @@
 @import '../../variables';
 
-.comments {
+.the-comments {
     max-width: 1600px;
     margin: 0 auto;
 
     h2 {
-        margin: 20px 30px;
+        margin: 40px 30px 20px 30px;
     }
-}
 
-.com-input {
-    margin-left: 30px;
-
-    input {
+    .com-input {
         margin-left: 30px;
-        width: 950px;
-        height: 45px;
-        font-size: 1.3rem;
-        padding-left: 10px;
-    }
-}
-
-.comment {
- max-width: 1000px;   
- margin-left: 30px;
- position: relative;
-
- img {
-    position: absolute;
- }
-
- p {
-     margin-left: 45px;
-     line-height: 25px;
- }
-}
-
-.name-time {
-    margin: 30px 0 10px 45px;
-    display: flex;
-
-    span {
-        margin: 2px 0 0 10px;
-        color: $span;
-    }
-
-    p {
-        color: $paragraph;
-    }
-}
-
- .com-icons {
-     margin: 10px 0 10px 45px;
-     display: flex;
-
-        span {
-            margin-right: 10px;
+    
+        input {
+            margin-left: 30px;
+            width: 860px;
+            height: 45px;
+            font-size: 1.3rem;
+            padding-left: 10px;
         }
 
-        svg {
-            width: 20px;
-            height: 20px;
-        }
-       
-     }
-
-    .up {
-        height: 18px;
-        padding: 0 10px;
-        border-left: 1px solid $border;
-        
+       .input-img {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        top: 10px;
+       }
     }
 
-    .down {
-        height: 18px;
-        padding: 0 10px;
-        border-left: 1px solid $border;
-        border-right: 1px solid $border;
-    }
+
+}
+

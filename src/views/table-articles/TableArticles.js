@@ -43,7 +43,7 @@ const TableArticles = (value) => {
         <tbody>
           {dataTable.map((data) => (
             <tr key={data.id}>
-            <td>{data.title.substring(0, 25)}...as</td>
+            <td>{data.title.substring(0, 25)}...</td>
             <td>{data.parex.substring(0, 80)}...</td>
             <td>{data.author}</td>
             <td>{data.comments}</td>
