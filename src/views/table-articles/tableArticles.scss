@@ -10,7 +10,7 @@
 
 .myArt-but {
     display: flex;
-    max-width: 1600px;
+    max-width: 1440px;
     margin: 50px 0 50px 30px;
     
     h1 {
@@ -27,9 +27,50 @@ table {
     thead th {
         text-align: left;
         border-bottom: 2px solid $border;
+        
+        padding-left: 10px;
+        padding-bottom: 8px;
+        position: relative;
+
+        .arrows {
+            width: 30px;
+            margin: 0;
+            position: absolute;
+            bottom: 0;
+
+            svg {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .tit {
+            left: 100px;
+        }
+
+        .per {
+            left: 60px;
+        }
+
+        .aut {
+            left: 70px;
+        }
+
+        .com {
+            left:130px;
+            margin-right: 10px;
+        }
+
+        .action {
+            padding-left: 30px;
+        }
+
+
     }
 
     tbody td {
+        text-align: left;
+        margin-right: 20px;
         padding: 15px 10px;
         border-bottom: 1px solid $border;
         font-size: 1.1rem;

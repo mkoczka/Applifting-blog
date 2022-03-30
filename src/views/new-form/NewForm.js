@@ -5,11 +5,6 @@ import '../new-form/newForm.scss'
 
 import TheButton from '../../components/button/TheButton'
 
-const initialState = {
-  title: "",
-  text: ""
-}
-
 
 const NewForm = () => {
   const [formValue, setFormValue] = useState({

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Router} from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 import RecentArticles from './views/recent/RecentArticles.js';
 import Single from './views/single/single.js'
 import NavBar from './components/NavBar/NavBar'

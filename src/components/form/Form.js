@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import TheButton from '../../components/button/TheButton'
 
 import '../form/form.scss'

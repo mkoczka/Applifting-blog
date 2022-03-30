@@ -1,20 +1,14 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+import React from 'react'
+
 
 import '../login/login.scss'
 
 const Login = () => {
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-
   const hendleSubmit = (e) => {
     e.preventDefault();
-    const newArticle = {
-      email,
-      password
-    }
-    axios.post('https://my-json-server.typicode.com/Naiio97/demo/myArticles')
+   
+  
   }
 
   return (

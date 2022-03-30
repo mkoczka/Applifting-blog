@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import '../table-articles/tableArticles.scss'
 import TheButton from '../../components/button/TheButton'
 import axios from 'axios'
-import { IoPencil } from "react-icons/io5";
-import { IoTrash } from "react-icons/io5";
+import { IoPencil, IoTrash  } from "react-icons/io5";
+import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 
 
 
@@ -42,21 +42,23 @@ const TableArticles = () => {
       <table>
         <thead>
           <tr>
-              <th>Article title</th>
-              <th>Perex</th>
-              <th>Author</th>
-              <th># of comments</th>
-              <th>action</th>
+            <th><input type="checkbox"></input></th>
+              <th>Article title <div className="tit arrows"><TiArrowSortedUp/><TiArrowSortedDown/></div></th>
+              <th>Perex <div className="per arrows"><TiArrowSortedUp/><TiArrowSortedDown/></div></th>
+              <th>Author <div className="aut arrows"><TiArrowSortedUp/><TiArrowSortedDown/></div></th>
+              <th># of comments <div className="com arrows"><TiArrowSortedUp/><TiArrowSortedDown/></div></th>
+              <th className="action">action</th>
           </tr>
         </thead>
         <tbody>
           {dataTable.map((d, index) => (
             <tr key={index}>
-            <td>{d.title.substring(0, 25)}...</td>
-            <td>{d.text.substring(0, 80)}...</td>
-            <td>{d.author}</td>
-            <td>{d.comments}</td>
-            <td>
+              <td><input type="checkbox"></input></td>
+              <td>{d.title.substring(0, 25)}...</td>
+              <td>{d.text.substring(0, 80)}...</td>
+              <td>{d.author}</td>
+              <td>{d.comments}</td>
+              <td>
               <Link to={"/edit-form"}>
                 <IoPencil/> 
               </Link>
@@ -64,8 +66,8 @@ const TableArticles = () => {
                 <IoTrash onClick={hendleDelete}/>
               
               
-            </td>
-          </tr>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>
