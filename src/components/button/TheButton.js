@@ -1,13 +1,12 @@
-import React from 'react'
-import '../button/button.scss'
+import React from "react";
+import "../button/button.scss";
 
-
- const TheButton = ({value}) => {
+const TheButton = ({ value }) => {
   return (
     <div>
-        <button>{value}</button>
+      <button>{value}</button>
     </div>
-  )
-}
+  );
+};
 
 export default TheButton;

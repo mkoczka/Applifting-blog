@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom"
-import axios from 'axios'
-import '../new-form/newForm.scss'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../new-form/newForm.scss";
 
-import TheButton from '../../components/button/TheButton'
-
+import TheButton from "../../components/button/TheButton";
 
 const NewForm = () => {
   const [formValue, setFormValue] = useState({
     title: "",
-    text: ""
-  })
-  
+    text: "",
+  });
 
   const navigate = useNavigate();
 
@@ -23,27 +21,29 @@ const NewForm = () => {
 
     today = dd + "/" + mm + "/" + yyyy;
     return today;
-  }
-
+  };
 
   const hendleSubmit = (e) => {
     e.preventDefault();
-    const today = getDate()
-    const newArticle = { ...formValue, date: today }
+    const today = getDate();
+    const newArticle = { ...formValue, date: today };
 
     axios
-      .post('https://my-json-server.typicode.com/Naiio97/demo/myArticles', newArticle)
-      .then(res => {
+      .post(
+        "https://my-json-server.typicode.com/Naiio97/demo/myArticles",
+        newArticle
+      )
+      .then((res) => {
         console.log("Blog Updated Successfully");
-        alert("Článek přidán")
+        alert("Článek přidán");
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("Error");
-      })
+      });
 
     setFormValue({ title: "", text: "" });
     navigate("/");
-  }
+  };
 
   const onInputChange = (e) => {
     let { name, value } = e.target;
@@ -53,9 +53,7 @@ const NewForm = () => {
   return (
     <div>
       <div className="new-form">
-        <form
-          className="new-article"
-          onSubmit={hendleSubmit}>
+        <form className="new-article" onSubmit={hendleSubmit}>
           <div className="header-but">
             <h1>Create new article</h1>
             <TheButton value="Publish Article" />
@@ -67,8 +65,7 @@ const NewForm = () => {
               name="title"
               className="form-control"
               onChange={onInputChange}
-            >
-            </input>
+            ></input>
           </div>
 
           <div className="uploade-img">
@@ -84,14 +81,13 @@ const NewForm = () => {
               onChange={onInputChange}
               rows="50"
               cols="150"
-            >
-            </textarea>
+            ></textarea>
           </div>
         </form>
       </div>
       )
     </div>
-  )
-}
+  );
+};
 
-export default NewForm
+export default NewForm;

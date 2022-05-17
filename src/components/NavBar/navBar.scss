@@ -1,39 +1,35 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 header {
-    background-color: rgba(246,247,249,1);
+  background-color: rgba(246, 247, 249, 1);
 }
-
 
 nav {
-    max-width: 1440px;
-    margin: 0 auto;
-    height: 50px;
-   
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 50px;
 
-    ul {
-        display: flex;
-        position: relative;
-    
-        li {
-            margin: 15px 30px;
-            list-style: none;
-       
-            .link {
-                text-decoration: none;
-                color: $link;
-                &:hover{
-                    color: $hover-link;
-                }
-               
-            }
-        }
+  ul {
+    display: flex;
+    position: relative;
 
-        .right-li {
-            position: absolute;
-            right: 10px;
-            color: rgba(35,100,250,1);
+    li {
+      margin: 15px 30px;
+      list-style: none;
+
+      .link {
+        text-decoration: none;
+        color: $link;
+        &:hover {
+          color: $hover-link;
         }
+      }
     }
-}
 
+    .right-li {
+      position: absolute;
+      right: 10px;
+      color: rgba(35, 100, 250, 1);
+    }
+  }
+}

@@ -1,25 +1,23 @@
-@import '../../variables';
+@import "../../variables";
 .sidebar {
-    flex: 3;
-    color: $header-article;
-    margin-top: 80px;
-    border-left: 2px solid $border;
-    height: 700px;
-    padding-left: 20px;
-    
+  flex: 3;
+  color: $header-article;
+  margin-top: 80px;
+  border-left: 2px solid $border;
+  height: 700px;
+  padding-left: 20px;
 
-    h2 {
-        margin-bottom: 40px;
-        
-    }
+  h2 {
+    margin-bottom: 40px;
+  }
 }
 
 .side-articles {
-    h3 {
-        margin:40px 0 10px 0 ;
-    }
+  h3 {
+    margin: 40px 0 10px 0;
+  }
 
-    p {
-        color: $paragraph;
-    }
+  p {
+    color: $paragraph;
+  }
 }
